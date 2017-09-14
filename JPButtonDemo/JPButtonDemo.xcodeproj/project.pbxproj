@@ -14,6 +14,7 @@
 		F0F1B0211F6A82B00054340B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F1B01F1F6A82B00054340B /* LaunchScreen.storyboard */; };
 		F0F1B02C1F6A82B00054340B /* JPButtonDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F1B02B1F6A82B00054340B /* JPButtonDemoTests.swift */; };
 		F0F1B0371F6A82B00054340B /* JPButtonDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F1B0361F6A82B00054340B /* JPButtonDemoUITests.swift */; };
+		F0F1B04A1F6A887D0054340B /* JPButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F1B0491F6A887D0054340B /* JPButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F0F1B0321F6A82B00054340B /* JPButtonDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JPButtonDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F1B0361F6A82B00054340B /* JPButtonDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPButtonDemoUITests.swift; sourceTree = "<group>"; };
 		F0F1B0381F6A82B00054340B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0F1B0491F6A887D0054340B /* JPButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		F0F1B0151F6A82B00054340B /* JPButtonDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F0F1B0481F6A887D0054340B /* Classes */,
 				F0F1B0161F6A82B00054340B /* AppDelegate.swift */,
 				F0F1B0181F6A82B00054340B /* ViewController.swift */,
 				F0F1B01A1F6A82B00054340B /* Main.storyboard */,
@@ -123,6 +126,15 @@
 				F0F1B0381F6A82B00054340B /* Info.plist */,
 			);
 			path = JPButtonDemoUITests;
+			sourceTree = "<group>";
+		};
+		F0F1B0481F6A887D0054340B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F0F1B0491F6A887D0054340B /* JPButton.swift */,
+			);
+			name = Classes;
+			path = ../../Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F1B0191F6A82B00054340B /* ViewController.swift in Sources */,
+				F0F1B04A1F6A887D0054340B /* JPButton.swift in Sources */,
 				F0F1B0171F6A82B00054340B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
