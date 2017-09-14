@@ -19,9 +19,17 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
+    @IBAction func borderRunnerButtonPressed(_ sender: JPButton) {
+        let borderRunnerColor = UIColor(red: 47.0/255.0, green: 240.0/255.0, blue: 215.0/255.0, alpha: 1.0)
+        sender.startBorderRunner(withRunnerColor: borderRunnerColor, withSize: CGSize(width: 25, height: 12), isRound: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+            sender.stopAndRemoveBorderRunner()
+        }
+    }
 
 }
 
