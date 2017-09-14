@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  JPButton
+//  JPButtonDemo
 //
 //  Created by Josip Petric on 14/09/2017.
 //  Copyright © 2017 BitForest. All rights reserved.

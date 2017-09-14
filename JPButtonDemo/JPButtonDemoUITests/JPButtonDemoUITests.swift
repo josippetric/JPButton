@@ -1,6 +1,6 @@
 //
-//  JPButtonUITests.swift
-//  JPButtonUITests
+//  JPButtonDemoUITests.swift
+//  JPButtonDemoUITests
 //
 //  Created by Josip Petric on 14/09/2017.
 //  Copyright © 2017 BitForest. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class JPButtonUITests: XCTestCase {
+class JPButtonDemoUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
