@@ -21,7 +21,15 @@ class JPButton: UIButton {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-
+        startBreathing()
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        stopBreathing()
+        super.touchesEnded(touches, with: event)
+    }
+    
+    fileprivate func startBreathing() {
         guard breathingEnabled else { return }
         
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -44,15 +52,13 @@ class JPButton: UIButton {
         })
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    fileprivate func stopBreathing() {
         if breathingEnabled {
             self.layer.removeAllAnimations()
             UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
                 self.transform = CGAffineTransform.identity
             }, completion: nil)
         }
-
-        super.touchesEnded(touches, with: event)
     }
 }
 
@@ -60,8 +66,10 @@ class JPButton: UIButton {
 // MARK: - Border Runner Animation
 
 extension JPButton {
-    func startBorderRunner(withRunnerColor color: UIColor, withSize size: CGSize, isRound: Bool = false, andTimeToGoRound timeToGoRound: Double = 2.0) {
+    func startBorderRunner(withRunnerColor color: UIColor, runnerSize size: CGSize, isRound: Bool = false, timeToGoRound: Double = 2.0, withBreathing: Bool = false) {
         self.stopAndRemoveBorderRunner()
+        
+        isUserInteractionEnabled = false
         
         DispatchQueue.main.async {
             let runnerView = UIView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
@@ -74,6 +82,11 @@ extension JPButton {
             
             self.addSubview(runnerView)
             runnerView.center = CGPoint(x: 0.0, y: 0.0)
+            
+            if withBreathing {
+                self.breathingEnabled = true
+                self.startBreathing()
+            }
             
             UIView.animateKeyframes(withDuration: timeToGoRound, delay: 0.0, options: [.repeat], animations: {
                 UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25, animations: {
@@ -106,6 +119,7 @@ extension JPButton {
     }
     
     func stopAndRemoveBorderRunner() {
+        isUserInteractionEnabled = true
         DispatchQueue.main.async {
             self.layer.removeAllAnimations()
             if let runnerView = self.viewWithTag(self.kBorderRunnerViewTag) {

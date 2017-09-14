@@ -24,12 +24,20 @@ class ViewController: UIViewController {
 
     @IBAction func borderRunnerButtonPressed(_ sender: JPButton) {
         let borderRunnerColor = UIColor(red: 47.0/255.0, green: 240.0/255.0, blue: 215.0/255.0, alpha: 1.0)
-        sender.startBorderRunner(withRunnerColor: borderRunnerColor, withSize: CGSize(width: 25, height: 12), isRound: true)
+        sender.startBorderRunner(withRunnerColor: borderRunnerColor, runnerSize: CGSize(width: 25, height: 12), isRound: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             sender.stopAndRemoveBorderRunner()
         }
     }
 
+    @IBAction func runnerAndBreathingButtonPressed(_ sender: JPButton) {
+        let borderRunnerColor = UIColor(red: 204.0/255.0, green: 115.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+        sender.startBorderRunner(withRunnerColor: borderRunnerColor, runnerSize: CGSize(width: 25, height: 12), isRound: true, timeToGoRound: 3.5, withBreathing: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            sender.stopAndRemoveBorderRunner()
+        }
+    }
 }
 

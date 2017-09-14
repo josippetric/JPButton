@@ -83,19 +83,57 @@
                                 <color key="textColor" red="0.35294117650000001" green="0.38431372549999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r6-jg-wET" customClass="JPButton" customModule="JPButtonDemo" customModuleProvider="target">
+                                <rect key="frame" x="107.5" y="303.5" width="160" height="50"/>
+                                <color key="backgroundColor" red="0.64893265525473864" green="0.36575107368713006" blue="0.81135425450850507" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="EYp-EG-pYi"/>
+                                    <constraint firstAttribute="height" constant="50" id="VYv-Ny-bYi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Runner &amp; Breathing"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="breathingEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="breathingDuration">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="breathDuration">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="runnerAndBreathingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8B-Zb-wkH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border runner with breathing. Animation will stop after 10 seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRV-TL-wlD">
+                                <rect key="frame" x="40" y="262.5" width="295" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.35294117650000001" green="0.38431372549999998" blue="0.46274509800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5r6-jg-wET" firstAttribute="top" secondItem="YRV-TL-wlD" secondAttribute="bottom" constant="8" id="5NF-fT-TMh"/>
+                            <constraint firstAttribute="trailing" secondItem="YRV-TL-wlD" secondAttribute="trailing" constant="40" id="BNR-2A-czg"/>
+                            <constraint firstItem="YRV-TL-wlD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="C1V-bB-7Jo"/>
                             <constraint firstItem="r6n-Vw-4vH" firstAttribute="top" secondItem="83D-Q6-WRe" secondAttribute="bottom" constant="25" id="GOR-dm-S69"/>
                             <constraint firstItem="83D-Q6-WRe" firstAttribute="top" secondItem="hLb-VW-uBl" secondAttribute="bottom" constant="8" id="PlC-3x-vQe"/>
                             <constraint firstItem="83D-Q6-WRe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zlf-JW-ggU"/>
                             <constraint firstItem="r6n-Vw-4vH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="dxp-iw-h7V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r6n-Vw-4vH" secondAttribute="trailing" constant="40" id="eX5-eE-Srg"/>
+                            <constraint firstItem="YRV-TL-wlD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hkb-r4-BWo"/>
+                            <constraint firstItem="5r6-jg-wET" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jTV-C6-1T2"/>
                             <constraint firstItem="hLb-VW-uBl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="nPG-zs-5Zw"/>
                             <constraint firstItem="fOu-6m-JVG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qnH-Ye-mt4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hLb-VW-uBl" secondAttribute="trailing" constant="40" id="r98-QM-FhF"/>
                             <constraint firstItem="hLb-VW-uBl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="usQ-Jf-haR"/>
                             <constraint firstItem="fOu-6m-JVG" firstAttribute="top" secondItem="r6n-Vw-4vH" secondAttribute="bottom" constant="8" id="wPs-Px-d4g"/>
+                            <constraint firstItem="YRV-TL-wlD" firstAttribute="top" secondItem="fOu-6m-JVG" secondAttribute="bottom" constant="25" id="xmU-m9-U8W"/>
                         </constraints>
                     </view>
                     <connections>
