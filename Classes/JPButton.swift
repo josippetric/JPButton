@@ -17,8 +17,22 @@ class JPButton: UIButton {
     // Set to false to disable breathing animation
     @IBInspectable open var breathingEnabled: Bool = false
     // Time needed for button to make one "breath"
-    @IBInspectable open var breathDuration  : CGFloat = 3.0
+    @IBInspectable open var breathDuration: CGFloat = 3.0
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        layer.masksToBounds = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        layer.masksToBounds = true
+    }
+    
+    // Breathing functionality is added when user taps and holds the button and removed when 
+    // the button is released
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         startBreathing()
@@ -89,25 +103,25 @@ extension JPButton {
             }
             
             UIView.animateKeyframes(withDuration: timeToGoRound, delay: 0.0, options: [.repeat], animations: {
-                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.25, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.22, animations: {
                     runnerView.center = CGPoint(x: self.bounds.size.width, y: 0.0)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.05, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.22, relativeDuration: 0.03, animations: {
                     runnerView.bounds = CGRect(x: 0, y: 0, width: size.height, height: size.width)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.22, animations: {
                     runnerView.center = CGPoint(x: self.bounds.size.width, y: self.bounds.size.height)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.05, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.47, relativeDuration: 0.03, animations: {
                     runnerView.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.25, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.22, animations: {
                     runnerView.center = CGPoint(x: 0, y: self.bounds.size.height)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.05, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.72, relativeDuration: 0.03, animations: {
                     runnerView.bounds = CGRect(x: 0, y: 0, width: size.height, height: size.width)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.22, animations: {
                     runnerView.center = CGPoint(x: 0, y: 0)
                 })
                 UIView.addKeyframe(withRelativeStartTime: 0.96, relativeDuration: 0.04, animations: {
