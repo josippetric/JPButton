@@ -39,7 +39,7 @@ class JPButton: UIButton {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        stopBreathing()
+       // stopBreathing()
         super.touchesEnded(touches, with: event)
     }
     
@@ -121,7 +121,7 @@ extension JPButton {
                 UIView.addKeyframe(withRelativeStartTime: 0.72, relativeDuration: 0.03, animations: {
                     runnerView.bounds = CGRect(x: 0, y: 0, width: size.height, height: size.width)
                 })
-                UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.22, animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25, animations: {
                     runnerView.center = CGPoint(x: 0, y: 0)
                 })
                 UIView.addKeyframe(withRelativeStartTime: 0.96, relativeDuration: 0.04, animations: {
