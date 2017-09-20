@@ -22,6 +22,7 @@ All properties can be set from Interface Builder or from code
 
 ### Border Runner animation
 <p align="left"><img width="173" height="60" src="Screenshots/border-runner.gif"/></p>
+
 * To start the border runner animation, just call ```startBorderRunner``` method. Runner color, shape and size can be customized by changing parameters of the ```startBorderRunner``` method.
 * To stop the animation, call the ```stopAndRemoveBorderRunner``` method.
 
