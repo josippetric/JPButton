@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JPButton"
-  s.version          = "0.2"
+  s.version          = "0.3"
   s.summary          = "Custom UIButton effects and animations."
   s.homepage         = "https://github.com/josippetric/JPButton"
   s.license          = 'MIT'
