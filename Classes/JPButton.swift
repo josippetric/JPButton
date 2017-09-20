@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JPButton: UIButton {
+open class JPButton: UIButton {
     
     fileprivate let kBorderRunnerViewTag = 456754321
     
@@ -25,7 +25,7 @@ class JPButton: UIButton {
         layer.masksToBounds = true
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         layer.masksToBounds = true
@@ -33,12 +33,12 @@ class JPButton: UIButton {
     
     // Breathing functionality is added when user taps and holds the button and removed when 
     // the button is released
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         startBreathing()
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
        // stopBreathing()
         super.touchesEnded(touches, with: event)
     }
@@ -80,7 +80,7 @@ class JPButton: UIButton {
 // MARK: - Border Runner Animation
 
 extension JPButton {
-    func startBorderRunner(withRunnerColor color: UIColor, runnerSize size: CGSize, isRound: Bool = false, timeToGoRound: Double = 2.0, withBreathing: Bool = false) {
+    open func startBorderRunner(withRunnerColor color: UIColor, runnerSize size: CGSize, isRound: Bool = false, timeToGoRound: Double = 2.0, withBreathing: Bool = false) {
         self.stopAndRemoveBorderRunner()
         
         isUserInteractionEnabled = false
@@ -132,7 +132,7 @@ extension JPButton {
         }
     }
     
-    func stopAndRemoveBorderRunner() {
+    open func stopAndRemoveBorderRunner() {
         isUserInteractionEnabled = true
         DispatchQueue.main.async {
             self.layer.removeAllAnimations()
