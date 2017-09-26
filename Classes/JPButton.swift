@@ -39,7 +39,7 @@ open class JPButton: UIButton {
     }
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-       // stopBreathing()
+        stopBreathing()
         super.touchesEnded(touches, with: event)
     }
     
